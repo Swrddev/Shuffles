@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chaos Playlist</title>
+  <style>
+    body {
+      font-family: system-ui;
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    iframe {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🔀 Chaos Playlist</h1>
+<button onclick="shuffle()">Shuffle!</button>
+
+<div id="player"></div>
+
+<script>
+const playlist = [
+  "https://youtube.com/embed/UOEWq4W0B-8",
+  "https://youtube.com/embed/khPhj32RTLk",
+];
+
+function shuffle() {
+  const random = playlist[Math.floor(Math.random() * playlist.length)];
+  document.getElementById("player").innerHTML =
+    `<iframe src="${random}" frameborder="0" allowfullscreen></iframe>`;
+}
+</script>
+
+</body>
+</html>
